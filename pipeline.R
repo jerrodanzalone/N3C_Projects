@@ -1,9 +1,17 @@
 
 
 @transform_pandas(
-    Output(rid="ri.vector.main.execute.0e68970f-704e-4882-8419-74095b8cebe3")
+    Output(rid="ri.vector.main.execute.0e68970f-704e-4882-8419-74095b8cebe3"),
+    hosp_covid_pts_comorb_smoke_vent=Input(rid="ri.foundry.main.dataset.a53be7a8-8182-4a7d-81e2-7008cdeb712e")
 )
-unnamed <- function() {
+unnamed <- function(hosp_covid_pts_comorb_smoke_vent) {
+    
+}
+
+@transform_pandas(
+    Output(rid="ri.vector.main.execute.00de6bc6-9024-41e7-81ac-bb9e8d47d401")
+)
+unnamed_1 <- function() {
     
 }
 
