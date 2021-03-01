@@ -7,8 +7,9 @@
 hrs_func <- function(hosp_covid_pts_comorb_smoke_vent) {
    d <- dim(hosp_covid_pts_comorb_smoke_vent)
    e <- nrow(distinct(hosp_covid_pts_comorb_smoke_vent, person_id))
+   e1 <- dmi(distinct(hosp_covid_pts_comorb_smoke_vent, person_id))
    f <- nrow(distinct(hosp_covid_pts_comorb_smoke_vent, person_id, macrovisit_start_date))
-   out <- data.frame(d,e,f)
+   out <- data.frame(d,e,e1,f)
    return(out)
 }
 
