@@ -6,6 +6,8 @@
 )
 dead <- function(hosp_covid_pts_comorb_smoke_vent) {
   d <-  count(hosp_covid_pts_comorb_smoke_vent[which date_of_death!=NULL],discharge_to_concept_name)
+  out <- data.frame(d)
+  return(out)
 }
 
 @transform_pandas(
