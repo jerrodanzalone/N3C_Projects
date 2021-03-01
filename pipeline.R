@@ -6,7 +6,7 @@
 )
 dead <- function(hosp_covid_pts_comorb_smoke_vent) {
     f <- hosp_covid_pts_comorb_smoke_vent
-  d <-  data.frame(hosp_covid_pts_comorb_smoke_vent[which(year_of_birth==1949),])
+  d <-  data.frame(hosp_covid_pts_comorb_smoke_vent[which(hosp_covid_pts_comorb_smoke_vent$year_of_birth==1949),])
   out <- data.frame(d)
   return(out)
 }
