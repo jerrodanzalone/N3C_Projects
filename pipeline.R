@@ -5,7 +5,9 @@
     hosp_covid_pts_comorb_smoke_vent=Input(rid="ri.foundry.main.dataset.a53be7a8-8182-4a7d-81e2-7008cdeb712e")
 )
 hrs_func <- function(hosp_covid_pts_comorb_smoke_vent) {
-    dim(hosp_covid_pts_comorb_smoke_vent)
+   d <- dim(hosp_covid_pts_comorb_smoke_vent)
+   out <- data.frame(d)
+   return(out)
 }
 
 @transform_pandas(
