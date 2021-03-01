@@ -5,7 +5,7 @@
     hosp_covid_pts_comorb_smoke_vent=Input(rid="ri.foundry.main.dataset.a53be7a8-8182-4a7d-81e2-7008cdeb712e")
 )
 dead <- function(hosp_covid_pts_comorb_smoke_vent) {
-  d <-  count(hosp_covid_pts_comorb_smoke_vent[which date_of_death!=NULL],discharge_to_concept_name)
+  d <-  count(hosp_covid_pts_comorb_smoke_vent[which(date_of_death!=NULL),],discharge_to_concept_name)
   out <- data.frame(d)
   return(out)
 }
