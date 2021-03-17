@@ -27,12 +27,12 @@ hrs_func <- function(hosp_covid_pts_comorb_smoke_vent) {
 }
 
 @transform_pandas(
-    Output(rid="ri.vector.main.execute.0a35de38-f5c6-4781-b0cb-a272ecd3e12d"),
+    Output(rid="ri.foundry.main.dataset.27962b78-2909-4440-bbde-564c5ab9df59"),
     hosp_covid_pts_comorb_smoke_vent=Input(rid="ri.foundry.main.dataset.a53be7a8-8182-4a7d-81e2-7008cdeb712e")
 )
 unnamed <- function(hosp_covid_pts_comorb_smoke_vent) {
     
-  out <- data.frame(hosp_covid_pts_comorb_smoke_vent)
+  out = hosp_covid_pts_comorb_smoke_vent
   return(out)
 }
 
