@@ -26,3 +26,10 @@ hrs_func <- function(hosp_covid_pts_comorb_smoke_vent) {
    return(out)
 }
 
+@transform_pandas(
+    Output(rid="ri.vector.main.execute.0a35de38-f5c6-4781-b0cb-a272ecd3e12d")
+)
+unnamed <- function() {
+    
+}
+
