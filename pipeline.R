@@ -5,7 +5,7 @@
     hosp_covid_pts_comorb_smoke_vent=Input(rid="ri.foundry.main.dataset.a53be7a8-8182-4a7d-81e2-7008cdeb712e")
 )
 dead <- function(hosp_covid_pts_comorb_smoke_vent) {
-  d <-  data.frame(hosp_covid_pts_comorb_smoke_vent[which(is.na(hosp_covid_pts_comorb_smoke_vent$date_of_death)==0),date_of_death])
+  d <-  data.frame(hosp_covid_pts_comorb_smoke_vent[which(is.na(hosp_covid_pts_comorb_smoke_vent$date_of_death)==0),2])
   out <- data.frame(d)
   return(out)
 }
