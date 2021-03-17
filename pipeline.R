@@ -34,3 +34,11 @@ unnamed <- function(hosp_covid_pts_comorb_smoke_vent) {
 
 }
 
+@transform_pandas(
+    Output(rid="ri.vector.main.execute.c217ddbf-801f-4408-9256-3ae8c2b138ae"),
+    hosp_covid_pts_comorb_smoke_vent=Input(rid="ri.foundry.main.dataset.a53be7a8-8182-4a7d-81e2-7008cdeb712e")
+)
+unnamed_1 <- function(hosp_covid_pts_comorb_smoke_vent) {
+    
+}
+
