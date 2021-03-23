@@ -75,6 +75,8 @@ unnamed_1 <- function(hosp_covid_pts_comorb_smoke_vent) {
 )
 unnamed_2 <- function(clean_table) {
     df_select <- SparkR::select(clean_table, "LOS", "ICU_Flag", "invasive_Mechanical_Ventilation", "invasive_Mechanical_Ventilation_Days", "age", "bmi", "min_Oxygen_Saturation", "min_Mean_Arterial_Pressure", "alc_combined", "alcohol_complications", "alcoholism") 
-    return(df_select)
+   r_df <- SparkR::collect(df_select)
+   return(r_df) 
+
 }
 
