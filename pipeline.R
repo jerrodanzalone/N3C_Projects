@@ -70,13 +70,12 @@ unnamed_1 <- function(hosp_covid_pts_comorb_smoke_vent) {
 }
 
 @transform_pandas(
-    Output(rid="ri.foundry.main.dataset.0ef4a6af-7dd1-43ad-a7b1-40c940ac4b26"),
+    Output(rid="ri.vector.main.execute.26e2824f-b01f-4d1b-a9d7-adc9ce4e3dc6"),
     clean_table=Input(rid="ri.foundry.main.dataset.37f2b757-7b38-4866-8b55-c0b4c9c5d9d4")
 )
 unnamed_2 <- function(clean_table) {
     df_select <- SparkR::select(clean_table, "LOS", "ICU_Flag", "invasive_Mechanical_Ventilation", "invasive_Mechanical_Ventilation_Days", "age", "bmi", "min_Oxygen_Saturation", "min_Mean_Arterial_Pressure", "alc_combined", "alcohol_complications", "alcoholism") 
-   r_df <- SparkR::collect(df_select)
-   return(r_df) 
-
+   sumstatsdf <- describe(df_select, "LOS", "ICU_Flag", "invasive_Mechanical_Ventilation", "invasive_Mechanical_Ventilation_Days", "age", "bmi", "min_Oxygen_Saturation", "min_Mean_Arterial_Pressure", "alc_combined", "alcohol_complications", "alcoholism")
+   showDF(sumstatsdf)
 }
 
