@@ -21,6 +21,8 @@ hrs_func <- function(hosp_covid_pts_comorb_smoke_vent) {
     clean_table=Input(rid="ri.foundry.main.dataset.37f2b757-7b38-4866-8b55-c0b4c9c5d9d4")
 )
 summary_stats <- function(clean_table) {
+library(sparklyr)
+library(dplyr)
     df_select <- SparkR::select(clean_table, "LOS", "ICU_Flag", "invasive_Mechanical_Ventilation", "invasive_Mechanical_Ventilation_Days", "age", "bmi", "min_Oxygen_Saturation", "min_Mean_Arterial_Pressure", "alc_combined") 
    sumstatsdf <- describe.by(df_select, alc_combined)
    showDF(sumstatsdf)
