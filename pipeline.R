@@ -74,6 +74,9 @@ unnamed_1 <- function(hosp_covid_pts_comorb_smoke_vent) {
     clean_table=Input(rid="ri.foundry.main.dataset.37f2b757-7b38-4866-8b55-c0b4c9c5d9d4")
 )
 unnamed_2 <- function(clean_table) {
+    print(clean_table %>% summary())
+    local_df <- clean_table %>% dplyr::select(LOS, ICU_Flag, invasive_Mechanical_Ventilation, invasive_Mechanical_Ventilation_Days, age, bmi, min_Oxygen_Saturation, min_Mean_Arterial_Pressure, alc_combined, alcohol_complications, alcoholism) 
+    return(local_df)
     
 }
 
