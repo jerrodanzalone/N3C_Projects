@@ -11,8 +11,8 @@ hrs_func <- function(hosp_covid_pts_comorb_smoke_vent) {
    f <- nrow(distinct(hosp_covid_pts_comorb_smoke_vent, person_id, macrovisit_start_date))
    g <- nrow(distinct(hosp_covid_pts_comorb_smoke_vent, person_id, macrovisit_start_date,macrovisit_end_date))
    h <- nrow(distinct(hosp_covid_pts_comorb_smoke_vent, person_id, macrovisit_start_date,macrovisit_end_date,discharge_to_concept_name))
-   i <- nrow(distinct(hosp_covid_pts_comorb_smoke_vent, person_id, macrovisit_start_date,macrovisit_end_date,discharge_to_concept_name,discharge_to_source_value)
-   d2 <- dim(distinct(hosp_covid_pts_comorb_smoke_vent, person_id, death_or_hospice, .keep_all=TRUE)))
+   i <- nrow(distinct(hosp_covid_pts_comorb_smoke_vent, person_id, macrovisit_start_date,macrovisit_end_date,discharge_to_concept_name,discharge_to_source_value))
+   d2 <- dim(distinct(hosp_covid_pts_comorb_smoke_vent, person_id, death_or_hospice, .keep_all=TRUE))
    out <- data.frame(d,e,e1,f,g,h,i)
    return(out)
 }
