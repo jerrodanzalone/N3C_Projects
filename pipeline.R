@@ -17,6 +17,17 @@ hrs_func <- function(hosp_covid_pts_comorb_smoke_vent) {
 }
 
 @transform_pandas(
+    Output(rid="ri.foundry.main.dataset.0ef4a6af-7dd1-43ad-a7b1-40c940ac4b26"),
+    clean_table=Input(rid="ri.foundry.main.dataset.37f2b757-7b38-4866-8b55-c0b4c9c5d9d4")
+)
+summary_stats <- function(clean_table) {
+    df_select <- SparkR::select(clean_table, "LOS", "ICU_Flag", "invasive_Mechanical_Ventilation", "invasive_Mechanical_Ventilation_Days", "age", "bmi", "min_Oxygen_Saturation", "min_Mean_Arterial_Pressure", "alc_combined") 
+   sumstatsdf <- describe.by(df_select, alc_combined)
+   showDF(sumstatsdf)
+   return(sumstatsdf)
+}
+
+@transform_pandas(
     Output(rid="ri.foundry.main.dataset.5cc363df-d97d-4f02-bbb4-1d43bcf642b2"),
     hosp_covid_pts_comorb_smoke_vent=Input(rid="ri.foundry.main.dataset.a53be7a8-8182-4a7d-81e2-7008cdeb712e")
 )
@@ -67,16 +78,5 @@ unnamed <- function(hosp_covid_pts_comorb_smoke_vent) {
 )
 unnamed_1 <- function(hosp_covid_pts_comorb_smoke_vent) {
     
-}
-
-@transform_pandas(
-    Output(rid="ri.foundry.main.dataset.0ef4a6af-7dd1-43ad-a7b1-40c940ac4b26"),
-    clean_table=Input(rid="ri.foundry.main.dataset.37f2b757-7b38-4866-8b55-c0b4c9c5d9d4")
-)
-unnamed_2 <- function(clean_table) {
-    df_select <- SparkR::select(clean_table, "LOS", "ICU_Flag", "invasive_Mechanical_Ventilation", "invasive_Mechanical_Ventilation_Days", "age", "bmi", "min_Oxygen_Saturation", "min_Mean_Arterial_Pressure", "alc_combined", "alcohol_complications", "alcoholism") 
-   sumstatsdf <- describe(df_select, "LOS", "ICU_Flag", "invasive_Mechanical_Ventilation", "invasive_Mechanical_Ventilation_Days", "age", "bmi", "min_Oxygen_Saturation", "min_Mean_Arterial_Pressure", "alc_combined", "alcohol_complications", "alcoholism")
-   showDF(sumstatsdf)
-   return(sumstatsdf)
 }
 
